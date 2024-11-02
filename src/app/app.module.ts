@@ -9,13 +9,15 @@ import { StorageService } from './services/storage.service';
 import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ChatComponent,
-    LoginComponent
+    LoginComponent,
+    ChatMessagesComponent
   ],
   imports: [
     BrowserModule,
