@@ -3,7 +3,8 @@ import { AuthService } from "../services/auth.service";
 import { Router } from "@angular/router";
 @Component({
     selector:'app-chat',
-    templateUrl:'./chat.component.html'
+    templateUrl:'./chat.component.html',
+    styleUrl:'./chat.component.css'
 })
 
 export class ChatComponent implements OnInit{
