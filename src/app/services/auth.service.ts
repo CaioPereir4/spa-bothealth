@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { StorageService } from "./storage.service";
-import { AuthModel } from "../models/authModel";
+import { AuthModel } from "../models/auth.model";
 
 
 @Injectable({
