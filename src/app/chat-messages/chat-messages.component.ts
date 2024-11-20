@@ -9,7 +9,7 @@ import { Messages } from "../models/messages.model";
 
 export class ChatMessagesComponent implements OnInit {
     public isInvalidMessage: boolean = false;
-    public isToShowInitialMessage: boolean = false;
+    public isToShowInitialMessage: boolean = true;
 
     public allMessages: Array<Messages> = [
         {isBot: true, isHuman: false, text: "Oi, tudo bem? "},

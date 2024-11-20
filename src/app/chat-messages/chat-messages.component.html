@@ -1,7 +1,7 @@
 <div class="flex flex-col bg-gray-200 overflow-hidden">
   <main class="flex flex-col items-center justify-center flex-1 p-6">
     <div
-      class="w-full h-96 max-w-2xl bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center"
+      class="w-full h-96 max-w-2xl bg-gray-250 rounded-lg shadow-md p-6 flex flex-col items-center text-center"
     >
       <header class="flex items-center w-full mb-6">
         <img
@@ -13,12 +13,12 @@
       </header>
 
       <div *ngIf="isToShowInitialMessage">
-        <h1 class="text-2xl font-semiboldtext-gray-800 mb-10">
+        <h1 class="text-2xl font-semibold text-gray-800 mb-10">
           Como posso te ajudar?
         </h1>
         <div class="flex gap-4 w-full">
           <div
-            class="bg-gray-50 p-4 border-b font-medium border-b-blue-500 rounded-md text-gray-700 flex-1"
+            class=" p-4 border-b font-medium border-b-blue-500 rounded-md text-gray-700 flex-1"
           >
             <p>
               Posso ajudá-lo com dúvidas sobre o estado de saúde do seu
@@ -26,7 +26,7 @@
             </p>
           </div>
           <div
-            class="bg-gray-50 p-4 border-b font-medium border-b-blue-500 rounded-md text-gray-700 flex-1"
+            class=" p-4 border-b font-medium border-b-blue-500 rounded-md text-gray-700 flex-1"
           >
             <p>
               Posso ajudá-lo a recomendar medicamentos de acordo com o estado de
@@ -40,18 +40,11 @@
         <div *ngFor="let message of allMessages" 
              [ngClass]="{'bot-message': message.isBot, 'user-message': !message.isBot}">
           <div class="message-bubble">
-            <p>{{ message.text }}</p>
+            <p class="font-medium">{{ message.text }}</p>
           </div>
-          <img
-            class="message-icon"
-            [ngClass]="{'bot-icon': message.isBot, 'user-icon': !message.isBot}"
-            [src]="message.isBot ? '../../assets/bot_image_white_background_v2.png' : '../../assets/user_avatar-preview.png'"
-            alt=""
-          />
         </div>
       </div>
       
-
 
     </div>
 

@@ -1,6 +1,7 @@
 .messages-container {
     max-height: 500px; 
     overflow-y: auto;
+    min-width: 40vw;
   }
   
 
@@ -23,30 +24,33 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    text-align: justify;
   }
   
   .user-message {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    text-align: justify;
   }
   
   .message-bubble {
     max-width: 60%;
     padding: 10px;
-    border-radius: 20px;
+    
     background-color: #e5f1fb; 
-    border: 1px solid #b0c4de;
     position: relative;
     margin: 5px;
   }
   
   .bot-message .message-bubble {
-    background-color: #d1f5d3;
+    background-color: #fff;
+    border-radius: 20px 20px 20px 5px;
   }
   
   .user-message .message-bubble {
     background-color: #dcf8c6; 
+    border-radius: 20px 20px 5px 20px;
   }
   
 
@@ -67,7 +71,7 @@
   }
   
   .message-bubble p {
-    margin: 0;
+    margin: 1px;
     color: #333;
   }
   
