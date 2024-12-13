@@ -73,7 +73,11 @@
               "buildTarget": "spa-bothealth:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "src/proxy.conf.json",
+            "buildTarget": "spa-bothealth:build"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

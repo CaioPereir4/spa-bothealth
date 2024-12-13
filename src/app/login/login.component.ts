@@ -21,13 +21,15 @@ export class LoginComponent implements OnInit{
     };
 
     public doLogin(password:string): void{
-        const loginResult = this.authService.login(password);
-        if(loginResult){
-            this.userInvalidPassword = false;
-            this.router.navigate(['/chat']);
-        } else {
-            this.userInvalidPassword = true;
-        }
+        this.authService.login(password).subscribe(loginResult => {
+            if(loginResult){
+                this.userInvalidPassword = false;
+                this.router.navigate(['/chat']);
+            } else {
+                this.userInvalidPassword = true;
+            }
+        });
+
     }
     
 }

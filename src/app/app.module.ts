@@ -10,6 +10,7 @@ import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
+import {  HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,10 @@ import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [StorageService, AuthService],
+  providers: [StorageService, AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
