@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { StorageService } from "./storage.service";
-import { AuthModel } from "../models/auth.model";
+import { UserModel } from "../models/user.model";
 import { HttpClient } from "@angular/common/http";
 import { catchError, map, Observable, of } from "rxjs";
 
@@ -13,37 +13,27 @@ export class AuthService {
     constructor(private storageService:StorageService, private httpClient: HttpClient) {}
 
     public login(passwordKey: string): Observable<boolean> {
-        const url = "/api/users/auth";
+        const url = "/api/users/login";
         const body = { secretKey: passwordKey };
     
         return this.httpClient.post(url, body).pipe(
-            map(response => {
-                console.log(response);
-                return true; // Or any logic based on `response`
+            map( (response: UserModel) => {
+                console.log(response.isUserAuthenticated)
+                if(response.isUserAuthenticated){
+                    this.storageService.saveToken(response);
+                    return true;
+                }
+                return false; // Or any logic based on `response`
             }),
             catchError(error => {
-                console.error(error);
                 return of(false); // Emit `false` in case of an error
             })
         );
     }
-    
-
-            // if(passwordKey === "CAIO_TESTANDO"){
-        //     const authObject: AuthModel = {
-        //         isUserAuthenticated: true,
-        //         passwordKey: passwordKey
-        //     };
-            
-        //     this.storageService.saveToken(authObject);
-        //     return true;
-        // };
-
-        // return false;
 
 
     public verifyLogin(): boolean{
-        const authObject: AuthModel = this.storageService.getToken();
+        const authObject: UserModel = this.storageService.getToken();
         if(authObject === null) { return false};
 
         if(authObject.isUserAuthenticated){
@@ -56,14 +46,17 @@ export class AuthService {
 
 
     public logout(): boolean {
-        const authObject: AuthModel = this.storageService.getToken();
+        const authObject: UserModel = this.storageService.getToken();
         if(authObject){
             this.storageService.removeToken();
             return true;
         };
 
         return false;
-    }
+    };
 
+    public getUserData() : UserModel {
+        return this.storageService.getToken();
+    }
     
 }

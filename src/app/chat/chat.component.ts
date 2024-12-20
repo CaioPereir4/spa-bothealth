@@ -9,6 +9,7 @@ import { Router } from "@angular/router";
 
 export class ChatComponent implements OnInit{
     constructor(private authService: AuthService, private router: Router){};
+    public userName : string;
 
     ngOnInit(): void {
         const isUserAuthenticated = this.authService.verifyLogin();
@@ -16,6 +17,9 @@ export class ChatComponent implements OnInit{
         if(!isUserAuthenticated){
             this.router.navigate(['/login']);
         };
+
+        const userData = this.authService.getUserData();
+        this.userName = userData.name;
     }
     
 }

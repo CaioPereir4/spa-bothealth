@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { AuthModel } from "../models/auth.model";
+import { UserModel } from "../models/user.model";
 
 @Injectable({
     providedIn:'root'
@@ -13,7 +13,7 @@ export class StorageService {
         localStorage.setItem(this.tokenKey, tokenString);
     };
 
-    public getToken(): AuthModel | null  {
+    public getToken(): UserModel | null  {
         let tokenString = localStorage.getItem(this.tokenKey);
         return JSON.parse(tokenString);
     };
