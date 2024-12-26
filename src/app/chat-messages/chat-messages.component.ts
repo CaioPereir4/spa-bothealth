@@ -61,6 +61,17 @@ export class ChatMessagesComponent implements OnInit, AfterViewChecked {
         };
     };
 
+    public finishSession(){
+        console.log("Efetuando finishSession")
+        this.chatMessagesService.finishSession(this.userId).subscribe(
+            (response: GenericResponseModel) => {
+                if(response.httpCode === 200){
+                    window.location.reload();
+                }
+            }
+        )
+    };
+
     addThreeDotsInInterface(userMessage): void {
         this.isToShowInitialMessage = false;
         this.allMessages.push(

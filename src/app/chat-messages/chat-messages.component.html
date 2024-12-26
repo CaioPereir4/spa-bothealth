@@ -1,16 +1,28 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+
 <div class="flex flex-col bg-gray-200 overflow-hidden">
   <main class="flex flex-col items-center justify-center flex-1 p-6">
     <div
       class="w-full h-96 max-w-2xl bg-gray-250 rounded-lg shadow-md p-6 flex flex-col items-center text-center"
     >
-      <header class="flex items-center w-full mb-6">
+
+    <header class="flex items-center justify-between w-full mb-6 relative">
+      <div class="flex items-center">
         <img
           src="../../assets/bot_image_white_background_v2.png"
           alt="Avatar"
           class="w-10 h-10 rounded-full border-2 border-blue-500 mr-4"
         />
         <h2 class="text-xl font-semibold text-gray-800">Dr. Botinho</h2>
-      </header>
+      </div>
+      <button
+        class="absolute top-0 right-0 mt-2 mr-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full shadow flex items-center justify-center"
+        (click)="finishSession()"
+      >
+        <i class="fas fa-sync-alt"></i>
+      </button>
+    </header>
+
 
       <div *ngIf="isToShowInitialMessage">
         <h1 class="text-2xl font-semibold text-gray-800 mb-10">

@@ -33,4 +33,16 @@ export class ChatMessagesService {
             })
         )
     };
+
+    public finishSession(userId){
+        const url = "/api/chat/finishSession"
+
+        return this.httpClient.post(url, {userId}).pipe(
+            map( (response: GenericResponseModel) => {
+                return response
+            }), catchError( error => {
+                return of(error);
+            })
+        )
+    }
 };
