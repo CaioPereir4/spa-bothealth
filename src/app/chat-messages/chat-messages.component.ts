@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { AfterViewChecked, Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
 import { Messages } from "../models/messages.model";
 import { ChatMessagesService } from "../services/chat-messages.service";
 import { GenericResponseModel } from "../models/genericResponse.model";
@@ -9,12 +9,13 @@ import { GenericResponseModel } from "../models/genericResponse.model";
     "styleUrl":"./chat-messages.component.css"
 })
 
-export class ChatMessagesComponent implements OnInit {
+export class ChatMessagesComponent implements OnInit, AfterViewChecked {
     public isInvalidMessage: boolean = false;
     public isToShowInitialMessage: boolean = true;
     @Input() userId !: number;
 
-    constructor(private chatMessagesService: ChatMessagesService){};
+    constructor(private chatMessagesService: ChatMessagesService){}
+;
 
     public allMessages: Array<Messages> = [];
 
@@ -25,13 +26,20 @@ export class ChatMessagesComponent implements OnInit {
                 if(messages.length > 0){
                     this.isToShowInitialMessage = false;
                     this.allMessages = messages;
+                    this.scrollToBottom();
                 };
+        });
+
+        document.querySelector("#user-input").addEventListener('keypress', (input) => {
+            if(input["key"] === 'Enter'){
+                this.sendMessage();
+            };
         });
     };
 
     public sendMessage(): void{
 
-        const textArea = document.getElementById('user-input');
+        let textArea = document.getElementById('user-input');
         let message = textArea["value"];
         console.log("message: " + message);
 
@@ -39,20 +47,49 @@ export class ChatMessagesComponent implements OnInit {
             this.isInvalidMessage = true;
         } else {
             this.isInvalidMessage = false;
-            
+            this.addThreeDotsInInterface(message);
+            textArea["value"] = "";
             this.chatMessagesService.sendMessage(this.userId, message)
                 .subscribe( (response: GenericResponseModel) => {
                     const messages = response.result["messages"];
                     if(messages.length > 0){
                         this.allMessages = messages;
                         this.isToShowInitialMessage = false;
+                        this.scrollToBottom();
                     };
             })
         };
-
     };
 
-    public scrollToBottom(){
-
+    addThreeDotsInInterface(userMessage): void {
+        this.isToShowInitialMessage = false;
+        this.allMessages.push(
+            {
+                isBot: false,
+                isHuman : true,
+                text: userMessage
+            },
+            {
+                isBot: true,
+                isHuman: false,
+                text: "Gerando resposta..."
+            }
+        );
+        this.scrollToBottom();
     };
+
+    scrollToBottom(): void {
+
+        const messagesDiv = document.querySelector('.messages-container');
+        if (messagesDiv) {
+          messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        };
+    }
+
+    ngAfterViewChecked(): void {
+        this.scrollToBottom();
+    }
+
+    
+    
 }
