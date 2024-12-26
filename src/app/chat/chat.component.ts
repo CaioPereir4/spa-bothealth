@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
 export class ChatComponent implements OnInit{
     constructor(private authService: AuthService, private router: Router){};
     public userName : string;
-
+    public id: number;
     ngOnInit(): void {
         const isUserAuthenticated = this.authService.verifyLogin();
         console.log("isUserAuthenticated", isUserAuthenticated);
@@ -19,7 +19,9 @@ export class ChatComponent implements OnInit{
         };
 
         const userData = this.authService.getUserData();
+        console.log(userData)
         this.userName = userData.name;
+        this.id = userData.id;
     }
     
 }

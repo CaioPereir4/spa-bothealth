@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
 import {  HttpClientModule } from '@angular/common/http';
+import { ChatMessagesService } from './services/chat-messages.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import {  HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [StorageService, AuthService ],
+  providers: [StorageService, AuthService, ChatMessagesService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
