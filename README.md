@@ -1,5 +1,5 @@
-# Imagem do Botinho
-![Imagem do Botinho](src/assets/bot_image.png)
+# Interface Angular do Botinho.
+<img src="src/assets/bot_image.png" alt="Imagem do Botinho" width="300" height=300 />
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
 
