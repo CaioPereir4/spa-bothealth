@@ -1,7 +1,7 @@
 # Interface Angular do Botinho.
 # Imagem do Botinho
 <div style="text-align: center;">
-  <img src="src/assets/bot_image.png" alt="Imagem do Botinho" width="100" height="200"/>
+  <img src="src/assets/bot_image.png" alt="Imagem do Botinho" width="300" height="200"/>
 </div>
 
 
