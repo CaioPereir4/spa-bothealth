@@ -23,5 +23,5 @@ Tabela de conteúdos
 <!--te-->
 
 <h4 align="center"> 
-	 🚀 Finalizado  🚀 
+	 Status: Finalizado  🚀 
 </h4>
