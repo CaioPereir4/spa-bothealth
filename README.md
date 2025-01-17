@@ -25,3 +25,11 @@ Tabela de conteúdos
 <h4 align="center"> 
 	 Status: Finalizado  🚀 
 </h4>
+
+### Features
+
+- [x] Cadastro de usuário.
+- [x] Login do usuário.
+- [x] Enviar mensagem para o bot.
+- [x] Salvar histórico da conversa.
+- [x] Reset de histórico.
