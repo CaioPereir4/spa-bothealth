@@ -21,7 +21,7 @@ Tabela de conteúdos
    * [Tecnologias](#tecnologias)
 <!--te-->
 
-<h4 align="center"> 
+<h4 align="center">
 	 Status: Finalizado  🚀 
 </h4>
 
