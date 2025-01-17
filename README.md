@@ -1,6 +1,5 @@
 <h1 align="center">Interface Angular do Botinho.</h1>
 <p align="center">
-
   <img src="src/assets/bot_image.png" alt="Imagem do Botinho" width="300" height="300"/>
 </p>
 
@@ -11,7 +10,7 @@ Tabela de conteúdos
 <!--ts-->
    * [Sobre](#Sobre)
    * [Tabela de Conteudo](#tabela-de-conteudo)
-   * [Instalação](#instalacao)
+   * [Instalação](#instalacao)  <!-- Link correto para seção de instalação -->
    * [Como usar](#como-usar)
       * [Pre Requisitos](#pre-requisitos)
       * [Local files](#local-files)
@@ -34,8 +33,7 @@ Tabela de conteúdos
 - [x] Salvar histórico da conversa.
 - [x] Reset de histórico.
 
-###[Instalacao](#instalacao)
-
+### Instalação
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
