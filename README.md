@@ -1,8 +1,8 @@
-# Interface Angular do Botinho.
-# Imagem do Botinho
-<div style="text-align: center;">
-  <img src="src/assets/bot_image.png" alt="Imagem do Botinho" width="300" height="200"/>
-</div>
+<h1 align="center">Interface Angular do Botinho.</h1>
+<p align="center">
+
+  <img src="src/assets/bot_image.png" alt="Imagem do Botinho" width="300" height="300"/>
+</p>
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
