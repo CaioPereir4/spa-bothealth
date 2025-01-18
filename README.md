@@ -56,4 +56,4 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Angular](https://v17.angular.io/guide/what-is-angular)
-- [Tailwind CSS)[https://tailwindcss.com/docs/guides/angular]
+- [Tailwind CSS]{https://tailwindcss.com/docs/guides/angular)
