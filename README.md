@@ -8,7 +8,6 @@
 Tabela de conteúdos
 =================
 <!--ts-->
-   * [Tabela de Conteudo](#tabela-de-conteudo)
    * [Instalação](#instalacao)  <!-- Link correto para seção de instalação -->
    * [Como usar](#como-usar)
    * [Tecnologias](#tecnologias)
