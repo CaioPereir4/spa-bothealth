@@ -8,7 +8,6 @@
 Tabela de conteúdos
 =================
 <!--ts-->
-   * [Sobre](#sobre)
    * [Tabela de Conteudo](#tabela-de-conteudo)
    * [Instalação](#instalacao)  <!-- Link correto para seção de instalação -->
    * [Como usar](#como-usar)
@@ -50,3 +49,11 @@ $ npm install
 $ npm run start
 
 # O servidor inciará na porta:4200 - acesse <http://localhost:4200>
+```
+<a id="tecnologias"></a>
+### 🛠 Tecnologias
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [Angular](https://v17.angular.io/guide/what-is-angular)
+- [Tailwind CSS)[https://tailwindcss.com/docs/guides/angular]
